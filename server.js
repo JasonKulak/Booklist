@@ -34,6 +34,7 @@ app.use((req, res, next) => {
 app.use(morgan("dev")) // logging
 app.use(express.urlencoded({ extended: false }))  // body parser this is how we get access to req.body
 app.use(methodOverride("_method")) // Lets us use DELETE PUT HTTP verbs
+app.use("/public", express.static("public")) // serve up our public directory with the url prefix of /public/styles.css
 
 //
 //Routes & Router
